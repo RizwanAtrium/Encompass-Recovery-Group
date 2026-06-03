@@ -511,6 +511,161 @@ const applyDebtCopy = () => {
       .debt-header-cta * {
         color: white !important;
       }
+      .HomeHero #HomeHero__content {
+        align-items: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        padding-inline: clamp(1rem, 4vw, 4rem) !important;
+      }
+      .hero-debt-form {
+        animation: heroFormIn .85s cubic-bezier(.2, .8, .2, 1) both;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: grid;
+        gap: clamp(1rem, 3vw, 2.25rem);
+        grid-template-columns: minmax(0, 1fr) minmax(24rem, .82fr);
+        max-width: 76rem;
+        overflow: visible;
+        position: relative;
+        width: min(100%, 76rem);
+      }
+      .hero-debt-form::before {
+        display: none !important;
+      }
+      .hero-debt-form__intro {
+        background: linear-gradient(145deg, rgba(3, 43, 47, .42), rgba(15, 127, 119, .12)) !important;
+        border: 1px solid rgba(255, 255, 255, .14);
+        border-radius: 1rem;
+        color: #ffffff !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 25rem;
+        padding: clamp(1.25rem, 3vw, 2.25rem);
+        position: relative;
+        text-align: center;
+        z-index: 1;
+      }
+      .hero-debt-form__media {
+        bottom: 0;
+        opacity: .18;
+        overflow: hidden;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 47%;
+      }
+      .hero-debt-form__media img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+      .hero-debt-form__media::after {
+        background: linear-gradient(90deg, rgba(15, 87, 105, 1), rgba(15, 87, 105, .42) 54%, rgba(15, 87, 105, .14));
+        content: "";
+        inset: 0;
+        position: absolute;
+      }
+      .hero-debt-form__intro > *:not(.hero-debt-form__media) {
+        position: relative;
+        z-index: 1;
+      }
+      .hero-debt-form__intro::after {
+        animation: heroFormGlow 5s ease-in-out infinite alternate;
+        background: radial-gradient(circle, rgba(246, 194, 26, .22), transparent 62%);
+        content: "";
+        height: 12rem;
+        pointer-events: none;
+        position: absolute;
+        right: -4rem;
+        top: -4rem;
+        width: 12rem;
+      }
+      .hero-debt-form__badge {
+        color: rgba(255, 255, 255, .78) !important;
+        font-size: .88rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      .hero-debt-form__title {
+        color: #ffffff !important;
+        font-size: clamp(2rem, 4vw, 3.6rem) !important;
+        line-height: .98 !important;
+        margin-top: 1rem;
+      }
+      .hero-debt-form__copy {
+        color: rgba(255, 255, 255, .78) !important;
+        font-size: clamp(.95rem, 1.4vw, 1.1rem);
+        line-height: 1.45;
+        margin: 1rem auto 0;
+        max-width: 22rem;
+      }
+      .hero-debt-form__chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+      .hero-debt-form__chips span {
+        background: rgba(255, 255, 255, .13);
+        border: 1px solid rgba(255, 255, 255, .18);
+        border-radius: 999px;
+        color: #ffffff !important;
+        font-size: .82rem;
+        padding: .45rem .7rem;
+      }
+      .hero-debt-form .debt-relief-form {
+        background: rgba(255, 255, 255, .98) !important;
+        border: 1px solid rgba(246, 194, 26, .45);
+        border-radius: 1rem;
+        box-shadow: 0 1.5rem 4rem rgba(3, 35, 38, .22) !important;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-debt-form .eyebrow,
+      .hero-debt-form label,
+      .hero-debt-form .debt-relief-form__check span {
+        color: #174246 !important;
+      }
+      .hero-debt-form .eyebrow {
+        color: #0f7f77 !important;
+        font-weight: 800;
+      }
+      .hero-debt-form input {
+        background: #f5faf9 !important;
+        border-color: rgba(15, 127, 119, .28) !important;
+        color: #09292c !important;
+      }
+      .hero-debt-form input[type="checkbox"] {
+        background: #ffffff !important;
+        accent-color: #0f7f77 !important;
+      }
+      @keyframes heroFormIn {
+        from {
+          opacity: 0;
+          transform: translateY(1.5rem) scale(.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes heroFormGlow {
+        from {
+          opacity: .55;
+          transform: translate3d(-1rem, .5rem, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(1rem, -.5rem, 0);
+        }
+      }
       .debt-relief-form {
         display: grid;
         gap: 1rem;
@@ -595,6 +750,53 @@ const applyDebtCopy = () => {
         }
         .debt-relief-form__grid {
           grid-template-columns: 1fr;
+        }
+        .HomeHero #HomeHero__content {
+          padding-top: 7rem !important;
+        }
+        .hero-debt-form {
+          border-radius: .75rem !important;
+          grid-template-columns: 1fr;
+          max-width: 22rem;
+        }
+        .hero-debt-form__intro {
+          min-height: auto;
+          padding: 1rem;
+        }
+        .hero-debt-form__media {
+          opacity: .12;
+          width: 100%;
+        }
+        .hero-debt-form__title {
+          font-size: 1.45rem !important;
+          line-height: 1.08 !important;
+          margin-top: .45rem;
+        }
+        .hero-debt-form__copy,
+        .hero-debt-form__chips {
+          display: none !important;
+        }
+        .hero-debt-form .debt-relief-form {
+          gap: .75rem;
+          padding: .85rem 1rem 1rem;
+        }
+        .hero-debt-form .debt-relief-form__grid {
+          gap: .7rem;
+        }
+        .hero-debt-form .heading {
+          font-size: 1.35rem !important;
+          line-height: 1.15 !important;
+        }
+        .hero-debt-form label {
+          font-size: .82rem !important;
+        }
+        .hero-debt-form input {
+          min-height: 2.65rem !important;
+          padding: .65rem .8rem !important;
+        }
+        .hero-debt-form .debt-relief-form__submit {
+          min-height: 3rem !important;
+          width: 100% !important;
         }
         header .actions,
         header .end,
@@ -737,6 +939,42 @@ const applyDebtCopy = () => {
     `;
   });
 
+  const heroContent = document.querySelector("#HomeHero__content");
+  if (heroContent && !heroContent.querySelector(".hero-debt-form__intro")) {
+    heroContent.innerHTML = `
+      <div class="hero-debt-form">
+        <div class="hero-debt-form__intro">
+          <div class="hero-debt-form__media"><img src="${new URL("assets/67f569ce-95d0-417c-b68f-a57e68e5a6d8 1.png", window.location.href).href}" alt=""></div>
+          <div>
+            <span class="hero-debt-form__badge">Free debt review</span>
+            <h1 class="hero-debt-form__title">Check your debt relief options</h1>
+            <p class="hero-debt-form__copy">A confidential first step with clear guidance and no pressure.</p>
+          </div>
+          <div class="hero-debt-form__chips">
+            <span>Private</span>
+            <span>Structured</span>
+            <span>Human support</span>
+          </div>
+        </div>
+        <form class="debt-relief-form" id="debt-form-hero">
+          <div class="stack">
+            <span class="eyebrow">Start here</span>
+          </div>
+          <div class="debt-relief-form__grid">
+            <label>First Name<input name="first_name" autocomplete="given-name" required></label>
+            <label>Last Name<input name="last_name" autocomplete="family-name" required></label>
+            <label>Your Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Your Phone Number<input name="phone" type="tel" autocomplete="tel" required></label>
+            <label>State or Zip Code<input name="state_or_zip" autocomplete="address-level1 postal-code" required></label>
+            <label class="debt-relief-form__check debt-relief-form__full"><input name="privacy" type="checkbox" required> <span>I read and accept the Privacy Policy</span></label>
+          </div>
+          <button class="btn size-md primary debt-relief-form__submit" type="submit"><span class="btn-content"><span>Submit request</span></span></button>
+          <p class="debt-relief-form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    `;
+  }
+
   const heroLoop = document.querySelector(".HomeHero__bottom");
   const footerLoop = document.querySelector('section[data-index="5"] .marquee');
   if (heroLoop && footerLoop && !heroLoop.dataset.footerLoopCopied) {
@@ -746,7 +984,7 @@ const applyDebtCopy = () => {
   }
 
   document.querySelectorAll("a[href]").forEach(link => {
-    if (link.closest("header .actions")) {
+    if (link.closest("header .actions, .footer__contact")) {
       return;
     }
     link.removeAttribute("href");
@@ -754,10 +992,15 @@ const applyDebtCopy = () => {
     link.style.cursor = "default";
   });
   document.addEventListener("click", event => {
-    const link = event.target.closest?.("a");
-    if (link && !link.closest("header .actions")) {
+    const target = event.target.closest?.("a, button, [role='button']");
+    if (
+      target &&
+      !target.closest(".debt-relief-form, .footer__contact") &&
+      !target.matches("[type='submit']")
+    ) {
       event.preventDefault();
       event.stopPropagation();
+      document.querySelector("#debt-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, true);
 
