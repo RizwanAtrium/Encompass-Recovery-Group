@@ -1,7 +1,59 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10953060841"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('set', 'linker', {
+        domains: ['encompassrecoverygroup.org', 'www.encompassrecoverygroup.org'],
+        accept_incoming: true
+      });
+      gtag('config', 'AW-10953060841');
+      window.__gtagInited = true;
+      window.__encompassGoogleAdsConfigured = true;
+    </script>
     <base href="https://salo.uk/" />
+    <script>
+      (() => {
+        const localHashUrl = hash => {
+          const targetHash = hash && hash.startsWith("#") ? hash : `#${hash || ""}`;
+          let source = window.location.href;
+          try {
+            if (window.parent && window.parent !== window && window.parent.location.origin === window.location.origin) {
+              source = window.parent.location.href;
+            }
+          } catch (error) {}
+          const url = new URL(source);
+          url.hash = targetHash;
+          return url.href;
+        };
+        const normalizeHashLink = link => {
+          if (!link?.getAttribute) return;
+          const rawHref = link.getAttribute("href") || "";
+          let hash = "";
+          if (rawHref.startsWith("#")) hash = rawHref;
+          else {
+            try {
+              const href = new URL(link.href);
+              if (href.hostname === "salo.uk" && href.hash) hash = href.hash;
+            } catch (error) {}
+          }
+          if (hash) link.setAttribute("href", localHashUrl(hash));
+        };
+        const normalizeHashLinks = root => {
+          (root || document).querySelectorAll?.("a[href]").forEach(normalizeHashLink);
+        };
+        document.addEventListener("DOMContentLoaded", () => normalizeHashLinks(document));
+        ["pointerover", "mouseover", "focusin", "mousedown", "click"].forEach(type => {
+          document.addEventListener(type, event => {
+            normalizeHashLink(event.target?.closest?.("a[href]"));
+          }, true);
+        });
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -20,40 +72,60 @@
       sizes="180x180"
       href="/favicon/apple-touch-icon.png"
     />
-    <meta name="apple-mobile-web-app-title" content="Salo Creative" />
+    <meta name="apple-mobile-web-app-title" content="Encompass Recovery Group" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     <!-- Cloudflare images client hints -->
     <meta
       http-equiv="Delegate-CH"
       content="sec-ch-dpr https://media.salo.uk; sec-ch-viewport-width https://media.salo.uk"
     />
-    <title>Web and brand design agency • Creative Digital Agency • Salo</title>
+    <title>Debt Relief and Debt Resolution Support</title>
     <meta
       name="description"
-      content="Exceptional design. Seamless collaboration. We provide logical &#38; beautiful design capabilities with value by seamlessly integrating as your creative team."
+      content="Debt relief and debt resolution support with clear options, practical next steps, and a respectful process."
     />
     <meta
       property="og:title"
-      content="Web and brand design agency • Creative Digital Agency"
+      content="Debt Relief and Debt Resolution Support"
     />
     <meta
       property="og:description"
-      content="Exceptional design. Seamless collaboration. We provide logical &#38; beautiful design capabilities with value by seamlessly integrating as your creative team."
+      content="Debt relief and debt resolution support with clear options, practical next steps, and a respectful process."
     />
-    <meta property="og:url" content="https://salo.uk/" />
+    <meta property="og:url" content="https://encompassrecoverygroup.org/" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Salo" />
+    <meta property="og:site_name" content="Encompass Recovery Group" />
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="Web and brand design agency • Creative Digital Agency"
+      content="Debt Relief and Debt Resolution Support"
     />
     <meta
       name="twitter:description"
-      content="Exceptional design. Seamless collaboration. We provide logical &#38; beautiful design capabilities with value by seamlessly integrating as your creative team."
+      content="Debt relief and debt resolution support with clear options, practical next steps, and a respectful process."
     />
     <meta name="robots" content="index-follow" />
-    <link rel="canonical" href="https://salo.uk/" />
+    <link rel="canonical" href="https://encompassrecoverygroup.org/" />
+    <style id="debt-copy-preload">
+      body {
+        opacity: 0;
+      }
+      html.debt-copy-ready body {
+        opacity: 1;
+      }
+      .salo-logo,
+      header nav,
+      header .actions,
+      #HomeHero__content,
+      #awwwards {
+        visibility: hidden;
+      }
+    </style>
+    <script>
+      window.setTimeout(() => {
+        document.documentElement.classList.add("debt-copy-ready");
+      }, 2500);
+    </script>
     <meta name="astro-view-transitions-enabled" content="true" />
     <meta name="astro-view-transitions-fallback" content="animate" />
     <script
@@ -1089,7 +1161,7 @@
                     class="mobile-nav__link"
                     href="/services/ui-ux"
                     data-astro-cid-qlfjksao
-                    >UX/UI & Digital Products</a
+                    >Debt Review & Strategy</a
                   >
                 </li>
                 <li data-astro-cid-qlfjksao>
@@ -1097,7 +1169,7 @@
                     class="mobile-nav__link"
                     href="/services/websites"
                     data-astro-cid-qlfjksao
-                    >High-Performance Websites</a
+                    >Creditor Resolution Support</a
                   >
                 </li>
                 <li data-astro-cid-qlfjksao>
@@ -1822,7 +1894,7 @@
                   <span
                     data-astro-cid-pjomj5wv
                     data-astro-transition-scope="astro-f2mhw7db-1"
-                    >UX/UI &amp; Digital Products</span
+                    >Debt Review &amp; Strategy</span
                   >
                 </h2>
                 <div
@@ -2164,7 +2236,7 @@
                   <span
                     data-astro-cid-pjomj5wv
                     data-astro-transition-scope="astro-f2mhw7db-2"
-                    >High-Performance Websites</span
+                    >Creditor Resolution Support</span
                   >
                 </h2>
                 <div
@@ -3524,13 +3596,18 @@
                         </h3>
                         <blockquote data-astro-cid-movqzfgx>
                           <p data-astro-cid-movqzfgx>
-                            “I've always been very impressed with the quality,
-                            care, enthusiasm and end results of everything
-                            they've done”
+                            "I was drowning in payday loan debt and didn't
+                            know where to turn. Encompass Recovery Group sat
+                            with me, explained every step, and within months my
+                            payments were cut nearly in half. For the first
+                            time in years, I feel like I can breathe again.
+                            They didn't just help me with my debt - they gave
+                            me my life back."
                           </p>
                           <footer data-astro-cid-movqzfgx>
                             <cite data-astro-cid-movqzfgx
-                              >Steve Renshaw | Co-Founder</cite
+                              >Maria T., Fort Lauderdale, FL<br />Enrolled
+                              Client | Payday Loan Consolidation Program</cite
                             >
                           </footer>
                         </blockquote>
@@ -4207,7 +4284,7 @@
                             data-astro-cid-ls4yazr2="true"
                             class="Tag"
                           >
-                            High-Performing Website
+                            Debt Resolution Support
                           </span>
                         </div>
                         <h3
@@ -4302,7 +4379,7 @@
                           data-astro-cid-ls4yazr2="true"
                           class="Tag"
                         >
-                          High-Performing Website
+                          Debt Resolution Support
                         </span>
                       </div>
                       <h3
@@ -4491,7 +4568,7 @@
                             data-astro-cid-ls4yazr2="true"
                             class="Tag"
                           >
-                            UI / UX
+                            Debt Review
                           </span>
                         </div>
                         <h3
@@ -5243,7 +5320,7 @@
                             data-astro-cid-ls4yazr2="true"
                             class="Tag"
                           >
-                            High-Performing Website
+                            Debt Resolution Support
                           </span>
                         </div>
                         <h3
@@ -5367,7 +5444,7 @@
                             data-astro-cid-ls4yazr2="true"
                             class="Tag"
                           >
-                            High-Performing Website
+                            Debt Resolution Support
                           </span>
                         </div>
                         <h3
@@ -5492,7 +5569,7 @@
                             data-astro-cid-ls4yazr2="true"
                             class="Tag"
                           >
-                            UI / UX
+                            Debt Review
                           </span>
                         </div>
                         <h3
@@ -6389,7 +6466,7 @@
                 <div data-astro-cid-gut6v4an="true" class="prose prose--md">
                   <p data-astro-cid-gut6v4an>
                     Don't limit your brand to one person's skillset. We bring
-                    the full creative suite - specialists in Brand, UI, and UX -
+                    a structured review process focused on debt clarity and practical support -
                     to your project. Plus, our Salo Standard protocol means
                     every pixel is vetted by a Design Director, guaranteeing a
                     level of consistency a solo freelancer simply can't match.
@@ -7075,7 +7152,7 @@
         <script>
           (() => {
             const script = document.createElement("script");
-            script.src = `${window.location.origin}/debt-copy.js`;
+            script.src = `${window.location.origin}/debt-copy.js?v=quadrants-section-1`;
             document.currentScript.after(script);
           })();
         </script>
@@ -7187,7 +7264,7 @@
                         href="/services/ui-ux"
                         data-astro-cid-35ed7um5
                       >
-                        UX/UI & Digital Products</a
+                        Debt Review & Strategy</a
                       >
                     </li>
                     <li class="footer-menu-item" data-astro-cid-35ed7um5>
@@ -7196,7 +7273,7 @@
                         href="/services/websites"
                         data-astro-cid-35ed7um5
                       >
-                        High-Performance Websites
+                        Creditor Resolution Support
                       </a>
                     </li>
                     <li class="footer-menu-item" data-astro-cid-35ed7um5>
@@ -7247,62 +7324,7 @@
                   </ul>
                 </nav>
               </div>
-              <div class="end" data-astro-cid-35ed7um5>
-                <div class="accreditations" data-astro-cid-35ed7um5>
-                  <div class="accreditation" data-astro-cid-35ed7um5>
-                    <img
-                      src="/cdn-cgi/image/onerror=redirect,width=120,height=80,format=webp/_astro/accreditation-agency-hackers.CskRe8_T.png"
-                      alt="Agency Hackers Logo"
-                      data-astro-cid-35ed7um5="true"
-                      loading="lazy"
-                      decoding="async"
-                      fetchpriority="auto"
-                      width="120"
-                      height="80"
-                      class="accreditation-image"
-                    />
-                  </div>
-                  <div class="accreditation" data-astro-cid-35ed7um5>
-                    <img
-                      src="/cdn-cgi/image/onerror=redirect,width=120,height=80,format=webp/_astro/accreditation-bima.DOjLsDfZ.png"
-                      alt="BIMA Logo"
-                      data-astro-cid-35ed7um5="true"
-                      loading="lazy"
-                      decoding="async"
-                      fetchpriority="auto"
-                      width="120"
-                      height="80"
-                      class="accreditation-image"
-                    />
-                  </div>
-                  <div class="accreditation" data-astro-cid-35ed7um5>
-                    <img
-                      src="/cdn-cgi/image/onerror=redirect,width=120,height=80,format=webp/_astro/accreditation-net.De0nr0fC.png"
-                      alt="Net Logo"
-                      data-astro-cid-35ed7um5="true"
-                      loading="lazy"
-                      decoding="async"
-                      fetchpriority="auto"
-                      width="120"
-                      height="80"
-                      class="accreditation-image"
-                    />
-                  </div>
-                  <div class="accreditation" data-astro-cid-35ed7um5>
-                    <img
-                      src="/cdn-cgi/image/onerror=redirect,width=120,height=80,format=webp/_astro/accreditation-aia.B3ALZq9Y.png"
-                      alt="Alliance of Independent Agencies Logo"
-                      data-astro-cid-35ed7um5="true"
-                      loading="lazy"
-                      decoding="async"
-                      fetchpriority="auto"
-                      width="120"
-                      height="80"
-                      class="accreditation-image"
-                    />
-                  </div>
-                </div>
-              </div>
+              <div class="end" data-astro-cid-35ed7um5></div>
             </div>
             <div class="copyright" data-astro-cid-35ed7um5>
               <div
@@ -7315,12 +7337,12 @@
                 class="cluster"
               >
                 <span data-astro-cid-35ed7um5
-                  >© 2026 Salo Creative. All rights reserved.</span
+                  >© 2026 Encompass Recovery Group. All rights reserved.</span
                 >
                 <a href="/environmental-sustainability/" data-astro-cid-35ed7um5
                   >Environmental Sustainability</a
                 >
-                <a href="/privacy" data-astro-cid-35ed7um5>Privacy Policy</a>
+                <a href="https://www.encompassrecoverygroup.com/privacy-policy/" data-astro-cid-35ed7um5>Privacy Policy</a>
                 <a href="/ai-policy" data-astro-cid-35ed7um5>AI Policy</a>
               </div>
             </div>
@@ -7403,7 +7425,7 @@
     ></script>
     <script>
       (function () {
-        const gaMeasurementId = "G-6B61VS15KQ";
+        const gaMeasurementId = "AW-10953060841";
 
         // Guard against re-execution on view transitions — consent defaults must only
         // fire once, before gtag.js initialises. Re-running gtag('consent','default',...)
@@ -7425,13 +7447,10 @@
           });
           gtag("js", new Date());
           gtag("config", gaMeasurementId, { send_page_view: false });
+          window.__encompassGoogleAdsConfigured = true;
         }
       })();
     </script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-6B61VS15KQ"
-    ></script>
     <!-- Cookie consent UI and consent state management -->
     <script
       type="module"
@@ -7474,3 +7493,5 @@
     <!-- Cloudflare Pages Analytics -->
   </body>
 </html>
+
+
