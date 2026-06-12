@@ -7,7 +7,7 @@ function App() {
     <main className="h-screen w-screen overflow-hidden">
       <iframe
         title="Encompass Recovery Group"
-        src="/snapshot.html?v=quadrants-section-1"
+        src="/snapshot.html"
         className="block h-full w-full border-0"
       />
     </main>
